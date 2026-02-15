@@ -1,26 +1,5 @@
 'use strict'
 
-function showMenu(btn, menu)
-{
-    let button = document.querySelector(`.${btn}`)
-    let menuList = document.querySelector(`.${menu}`)
-    let innBtn = menuList.querySelector('._innBtn')
-    button.addEventListener('click', function()
-    {
-        menuList.classList.add('show')
-    })
-    innBtn.addEventListener('click', function()
-    {
-        menuList.classList.remove('show')
-    })
-}
-showMenu('_menu', '_menuList')
-showMenu('_soc', '_socList')
-let a = '1'
-let b = 1
-console.log(a === b)
-
-
 function slider(sliderName)
 {
     let parent = document.querySelector(`.${sliderName}`)
@@ -29,8 +8,9 @@ function slider(sliderName)
     let currentIndex = 0
     let slideWidth = slides[0].offsetWidth
     let step = 0
-    let isAnimating = false
     let gap = 30
+
+    console.log(gap)
 
     let dotsContainer = document.createElement('div')
     dotsContainer.className = 'slider-dots';
@@ -49,7 +29,6 @@ function slider(sliderName)
 
         dotsContainer.appendChild(dot);
     })
-
     parent_dots.parentNode.appendChild(dotsContainer);
 
     slides.forEach(slide => {
